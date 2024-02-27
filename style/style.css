@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap');
+
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+    font-size: 15px;
+}
+
+:root {
+  --clr-text-primary: hsla(0, 0%, 100%, 0.75);
+  --clr-text-secondary: hsl(0, 0%, 95%);
+
+  --clr-accent-1: hsl(31, 77%, 52%);
+  --clr-accent-2: hsl(184, 100%, 22%);
+  --clr-accent-3: hsl(179, 100%, 13%);
+
+  /* FONTS */
+
+  --default-font-family: "Lexend Deca", sans-serif;
+  --header-font-family: "Big Shoulders Display", serif;
+
+  --fs-100: 1rem;
+  --fs-200: 1.125rem;
+  --fs-300: 1.25rem;
+  --fs-400: 1.5rem;
+  --fs-500: 2rem;
+  --fs-600: 2.5rem;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-black: 800;
+}
+
+body {
+  font-family: var(--default-font-family);
+  color: var(--clr-text-primary);
+  background-color: var(--clr-text-secondary);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+main {
+    margin-block: 5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  main {
+    flex-direction: row;
+  }
+}
+
+.card {
+    width: 22rem;
+    aspect-ratio: 3/4;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--item-clr);
+}
+
+@media (min-width: 900px) {
+  .card {
+    width: 20rem;
+    aspect-ratio: 2/3;
+    gap: 5rem;
+  }
+}
+
+.card[data-item-type="accent-1"] {
+  --item-clr: var(--clr-accent-1);
+}
+.card[data-item-type="accent-2"] {
+  --item-clr: var(--clr-accent-2);
+}
+.card[data-item-type="accent-3"] {
+  --item-clr: var(--clr-accent-3);
+}
+
+.card-main {
+  display: grid;
+  gap: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--header-font-family);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-600);
+  color:var(--clr-text-secondary);
+  text-transform: uppercase;
+}
+
+p {
+  color:var(--clr-text-primary);
+  line-height: 2;
+}
+
+.card-btn {
+  width: fit-content;
+  border: 3px solid var(--clr-text-secondary);
+  color: var(--item-clr);
+  padding: .875rem 2rem;
+  border-radius: 50vh;
+  font-weight: var(--fw-bold);
+}
+
+.card-btn:hover {
+  color: var(--clr-text-secondary);
+  background: transparent;
+}
